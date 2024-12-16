@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sparks - A company that cares about you</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex" id="main-nav">
+        <div class="flex">
+            <a id="home" class="item" onclick="activateLink('HomePageNotAccessible.html')">
+                Home
+            </a>
+        </div>
+        <div class="flex" id="our-services">
+            <div class="item">
+                Our Services
+            </div>
+            <div class="flex subitems">
+                <a class="item" style="margin-bottom:0px !important;" onclick="activateLink('PersonalEncouragementServicesNotAccessible.html')">
+                    Request a personal encouragement message
+                </a>
+            </div>
+        </div>
+        <div class="flex" id="interested-in-us">
+            <div class="item">
+                Interested in Us?
+            </div>
+            <div class="flex subitems">
+                <a class="item" onclick="activateLink('OurMissionPageNotAccessible.html')">
+                    Our Mission
+                </a>
+                <a class="item" onclick="activateLink('OurTeamPageNotAccessible.html')">
+                    Our Team
+                </a>
+                <a class="item" style="margin-bottom:0px !important;" onclick="activateLink('AnalyticsPageNotAccessible.html')">
+                    Cool Company Analytics
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="heading-1">
+            Our Team
+        </div>
+        <div class="paragraph">
+            At <span class="sparks">Sparks</span>, our team is our greatest asset. Each member brings unique talents, perspectives, and energy to create an inclusive and dynamic environment.
+        </div>
+
+        <div class="heading-2">
+            Meet the Team
+        </div>
+        <div class="paragraph">
+            We are proud to have a diverse group of individuals committed to making a positive impact. Get to know some of our amazing team members!
+        </div>
+
+        <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <img src="file12847463728373828.png" alt="">
+                <img src="file12987438863428973489734.png" alt="">
+                <img src="file28976547671891828839082.png" alt="">
+                <img src="file34875483721387281922323.png" alt="">
+            </div>
+            <button class="carousel-button left" onclick="moveSlide(-1)">&#9664;</button>
+            <button class="carousel-button right" onclick="moveSlide(1)">&#9654;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+            <span class="carousel-dot" onclick="goToSlide(0)"></span>
+            <span class="carousel-dot" onclick="goToSlide(1)"></span>
+            <span class="carousel-dot" onclick="goToSlide(2)"></span>
+            <span class="carousel-dot" onclick="goToSlide(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            const slideWidth = track.children[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function moveSlide(direction) {
+            const totalSlides = track.children.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        function startAutoPlay() {
+            setInterval(() => {
+                moveSlide(1);
+            }, 3000); // Change slide every 3 seconds
+        }
+
+        // Ensure responsiveness on window resize
+        window.addEventListener('resize', updateCarousel);
+
+        // Initialize carousel
+        updateCarousel();
+        startAutoPlay();
+    </script>
+
+    <script src="functions.js"></script>
+</body>
+</html>

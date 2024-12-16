@@ -1,0 +1,369 @@
+/** GLOBAL Variables **/
+:root {
+    --font-color: white;
+    --primary-color-orange: #C7832A;
+    --secondary-color-dark: #141414;
+}
+
+/** GLOBAL STYLING **/
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--font-color);
+    background-color: inherit;
+}
+
+.sparks {
+    text-transform: uppercase;
+    color: var(--font-color);
+    animation: textColourAnimation 4s infinite alternate;
+}
+
+    .sparks::before {
+        content: "\2728";
+        font-size: 0.6em;
+        vertical-align: super;
+    }
+
+    .sparks::after {
+        content: "\2728";
+        font-size: 0.6em;
+        vertical-align: super;
+    }
+
+@keyframes textColourAnimation {
+    0% {
+        color: var(--font-color);
+    }
+
+    50% {
+        color: var(--primary-color-orange);
+    }
+
+    100% {
+        color: var(--font-color);
+    }
+}
+
+
+/** HTML ELEMENT STYLING **/
+body {
+    background-color: var(--primary-color-orange);
+    width: 100%;
+    margin: 0;
+}
+
+td {
+    background-color: var(--secondary-color-dark);
+    border-style: dotted;
+    border-color: var(--primary-color-orange);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+th {
+    background-color: var(--secondary-color-dark);
+    border-style: dotted;
+    border-color: var(--primary-color-orange);
+    padding: 1em;
+}
+
+tr > td {
+    padding: 10px;
+    font-weight: bold;
+}
+
+table {
+    margin: auto;
+}
+
+/** FONT STYLING **/
+.heading-1 {
+    font-size: xx-large;
+    margin-block: 1em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.heading-2 {
+    font-size: x-large;
+    margin-block: 1em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.paragraph {
+    margin-bottom: 12px;
+    font-size: large;
+}
+
+/** MAIN STYLINGS **/
+.main-content {
+    margin: auto;
+    background-color: var(--secondary-color-dark);
+    padding: 20px;
+    max-width: 1000px;
+} 
+
+/** HOME PAGE SPECIFICS**/
+#support-hands {
+    border-radius: 8px;
+    max-width: 350px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/************* COMPONENTS ***************/
+/******** MAIN MENU STYLING ********/
+.flex {
+    display: flex;
+    padding: 8px 5px 5px 5px;
+}
+
+#main-nav {
+    background-color: var(--secondary-color-dark);
+    border-color: var(--primary-color-orange);
+    border-style: solid;
+    font-size: large;
+}
+
+#our-services {
+    position: relative; /* Establish a positioning context for submenus */
+}
+
+#interested-in-us {
+    position: relative; /* Establish a positioning context for submenus */
+}
+
+.item {
+    align-items: flex-start;
+    background-color: var(--secondary-color-dark);
+    border-color: var(--primary-color-orange);
+    border-style: solid;
+    padding: 0.5em;
+    display: inline;
+}
+
+.subitems {
+    flex-direction: column;
+    position: absolute;
+    top: 99%;
+    display: none;
+}
+
+    .subitems > a {
+        margin-bottom: 5px;
+    }
+
+/******** LIST STYLING ********/
+.list {
+    margin-bottom: 6px;
+}
+
+    .list:before {
+        content: "\25EF";
+        margin-right: 6px;
+        color: var(--primary-color-orange);
+    }
+
+/******** CAROUSEL STYLING ********/
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow */
+    border: 5px solid var(--primary-color-orange);
+    border-radius: 10px;
+}
+
+/* Carousel Images */
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Carousel Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color-orange);
+    color: white;
+    border: solid;
+    border-width: 5px;
+    border-color: black;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5em;
+    z-index: 1000;
+}
+
+    .carousel-button.left {
+        left: 10px;
+    }
+
+    .carousel-button.right {
+        right: 10px;
+    }
+
+    .carousel-button:hover {
+        background-color: var(--secondary-color-dark);
+    }
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: var(--primary-color-orange);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+    .carousel-dot.active {
+        background-color: #A66520;
+    }
+
+/******** FORM STYLING ********/
+/* Form Container */
+.encouragement-form {
+    max-width: 500px;
+    margin: 0 auto;
+    
+}
+
+/* Form Labels */
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
+}
+
+/* Form Inputs and Textarea */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--primary-color-orange);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.form-button {
+    background-color: var(--primary-color-orange);
+    color: var(--secondary-color-dark);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.form-button:hover {
+    background-color: #A66520;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: #ffffff;
+    
+}
+
+    .form-checkbox input[type="checkbox"] {
+        margin-right: 10px;
+        accent-color: var(--primary-color-orange); /* Applies to modern browsers for styling the checkbox */
+        width: 16px;
+        height: 16px;
+    }
+
+.form-checkbox div {
+    display: inline;
+}
+
+    .form-checkbox a {
+        color: var(--primary-color-orange);
+        text-decoration: none;
+    }
+
+.form-checkbox a:hover {
+    text-decoration: underline;
+}
+
+
+/******** DIALOG STYLING ********/
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensures it appears above other elements */
+    color: #333333; /* Text color for readability */
+    padding: 20px;
+    border: 2px solid var(--primary-color-orange); /* Matches your theme color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    max-width: 80%; /* Responsive sizing */
+    width: 400px; /* Fixed width for larger screens */
+    text-align: center; /* Center-aligns content */
+    overflow: auto; /* Ensures content is scrollable if too large */
+}
+
+/* Close Button Styling */
+    .dialog button {
+        background-color: var(--primary-color-orange);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        margin-top: 15px;
+    }
+
+.dialog button:hover {
+    background-color: #A66520;
+}
+
+/******** VIDEO STYLING ********/
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.video-player {
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.video-button {
+    font-size: large;
+    margin-left: 10px;
+    background-color: var(--secondary-color-dark);
+    border: solid;
+    border-color: var(--primary-color-orange);
+    border-width: 3px;
+    padding: 5px 10px 5px 10px;
+}

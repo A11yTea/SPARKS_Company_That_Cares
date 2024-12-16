@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sparks - A company that cares about you</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex" id="main-nav">
+        <div class="flex">
+            <a id="home" class="item" onclick="activateLink('HomePageNotAccessible.html')">
+                Home
+            </a>
+        </div>
+        <div class="flex" id="our-services">
+            <div class="item">
+                Our Services
+            </div>
+            <div class="flex subitems">
+                <a class="item" style="margin-bottom:0px !important;" onclick="activateLink('PersonalEncouragementServicesNotAccessible.html')">
+                    Request a personal encouragement message
+                </a>
+            </div>
+        </div>
+        <div class="flex" id="interested-in-us">
+            <div class="item">
+                Interested in Us?
+            </div>
+            <div class="flex subitems">
+                <a class="item" onclick="activateLink('OurMissionPageNotAccessible.html')">
+                    Our Mission
+                </a>
+                <a class="item" onclick="activateLink('OurTeamPageNotAccessible.html')">
+                    Our Team
+                </a>
+                <a class="item" style="margin-bottom:0px !important;" onclick="activateLink('AnalyticsPageNotAccessible.html')">
+                    Cool Company Analytics
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="heading-1">
+            Our Mission
+        </div>
+        <div class="paragraph">
+            At <span class="sparks">Sparks</span>, we ignite the spark that s been missing in your life because why settle for a flicker when you can have a bonfire? Our mission is simple: to spread awesomeness. We re not just a company; we re a lifestyle, a movement, and a commitment to being cool.
+        </div>
+        <div class="paragraph">
+            We truly believe in being the best version of ourselves. From random high-fives we give ourselves for no reason, to spontaneous dance-offs in the breakroom, we believe that life is too short to take too seriously. We embrace creativity, laughter, and a healthy dose of chaos.
+        </div>
+        <div class="paragraph">
+            Welcome to <span class="sparks">Sparks</span>. Let s make life shine a little brighter together.
+        </div>
+
+        <div class="heading-1">
+            Our Values
+        </div>
+        <div class="list paragraph">
+            Awesomeness in everything we do (because why settle for "meh"?)
+        </div>
+        <div class="list paragraph">
+            Creativity that sparks innovation (or at least a sparkly mess on the whiteboard)
+        </div>
+        <div class="list paragraph">
+            Empathy and inclusivity for all (even for people who say "gif" wrong)
+        </div>
+        <div class="list paragraph">
+            Teamwork that makes the dream work (and sometimes includes pizza)
+        </div>
+        <div class="list paragraph">
+            Resilience in the face of challenges (like Mondays and printer jams)
+        </div>
+
+        <!-- Video Player -->
+        <div class="video-player">
+            <video id="missionVideo" width="700px">
+                <source src="SPARKS COMPANY.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div style="margin-top: 10px; display: flex; justify-content: center;">
+                <button class="video-button" onclick="playVideo()">Play</button>
+                <button class="video-button" onclick="pauseVideo()">Pause</button>
+                <button class="video-button" onclick="skipVideo(-10)">Rewind 10s</button>
+                <button class="video-button" onclick="skipVideo(10)">Forward 10s</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('missionVideo');
+
+        function playVideo() {
+            video.play();
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        function skipVideo(seconds) {
+            video.currentTime += seconds;
+        }
+    </script>
+    <script src="functions.js"></script>
+</body>
+</html>

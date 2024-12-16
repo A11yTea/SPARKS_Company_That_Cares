@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sparks - A company that cares about you</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex" id="main-nav">
+        <div class="flex">
+            <a id="home" class="item" onclick="activateLink('HomePageNotAccessible.html')">
+                Home
+            </a>
+        </div>
+        <div class="flex" id="our-services">
+            <div class="item">
+                Our Services
+            </div>
+            <div class="flex subitems">
+                <a class="item" style="margin-bottom:0px !important;" onclick="activateLink('PersonalEncouragementServicesNotAccessible.html')">
+                    Request a personal encouragement message
+                </a>
+            </div>
+        </div>
+        <div class="flex" id="interested-in-us">
+            <div class="item">
+                Interested in Us?
+            </div>
+            <div class="flex subitems">
+                <a class="item" onclick="activateLink('OurMissionPageNotAccessible.html')">
+                    Our Mission
+                </a>
+                <a class="item" onclick="activateLink('OurTeamPageNotAccessible.html')">
+                    Our Team
+                </a>
+                <a class="item" style="margin-bottom:0px !important;" onclick="activateLink('AnalyticsPageNotAccessible.html')">
+                    Cool Company Analytics
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div id="termsDialog" class="dialog">
+            <div class="heading-2">Terms and Services</div>
+            <div class="paragraph">By using this service, you agree to be awesome, kind, and understanding. We promise to keep your details safe and only use them to send you personalized encouragement messages.</div>
+            <button onclick="closeTerms()" class="form-button">Close</button>
+        </div>
+
+        <div class="heading-1">Request a Personal Encouragement Message</div>
+        <div class="paragraph">
+            Everyone needs a little encouragement sometimes. Fill out the form below, and our team will send you a personalized message to brighten your day.
+        </div>
+
+        <form action="/submitEncouragement" method="post" class="encouragement-form">
+            <div class="form-label">*How People Call You:</div>
+            <input type="text" id="name" name="name" placeholder="Enter your value here" class="form-input" tabindex="2">
+
+            <div class="form-label">*Where to Send the Email:</div>
+            <input type="text" id="email" placeholder="Enter your value here" class="form-input" tabindex="1">
+
+            <div class="form-label">Message Type:</div>
+            <select name="messageType" class="form-input" tabindex="4">
+                <option value="uplifting">Uplifting</option>
+                <option value="funny">Funny</option>
+                <option value="motivational">Motivational</option>
+            </select>
+
+            <div class="form-label">Anything you'd like to share:</div>
+            <textarea name="additionalInfo" placeholder="Let us know any details you'd like us to include in the message" class="form-input" tabindex="5"></textarea>
+
+            <div class="form-checkbox">
+                <input type="checkbox" id="terms" name="terms" tabindex="3" required>
+                <div for="terms">I agree to the <a href="#" onclick="showTerms()">Terms and Services</a>.</div>
+            </div>
+
+            <button type="submit" class="form-button" tabindex="6">Submit Request</button>
+            <div class="paragraph" style="margin-top: 24px;">This form was made using <span class="sparks">Sparks</span> Drag-and-Drop™ forms maker.</div>
+        </form>
+    </div>
+
+    <script src="functions.js"></script>
+    <script>
+        function showTerms() {
+            document.getElementById('termsDialog').style.display = 'block';
+        }
+
+        function closeTerms() {
+            document.getElementById('termsDialog').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
